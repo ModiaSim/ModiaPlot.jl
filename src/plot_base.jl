@@ -356,6 +356,11 @@ end
 Print names, sizes, units and element types of the signals that are stored in result.
 """
 function printResultInfo(result)
+    if isnothing(result)
+        @info "The call of ModiaPlot.printResultInfo(result) is ignored, since the first argument is nothing."
+        return
+    end
+    
     resultInfoTable = DataFrames.DataFrame(name=String[], unit=String[], constant=Bool[], varSize=String[], eltype=String[])
 
     nTime = -1
