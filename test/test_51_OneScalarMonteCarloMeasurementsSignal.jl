@@ -1,0 +1,7 @@
+module test_51_OneScalarMonteCarloMeasurementsSignal
+
+using ModiaPlot
+
+include("test_base/test_51_OneScalarMonteCarloMeasurementsSignal.jl")
+
+end
