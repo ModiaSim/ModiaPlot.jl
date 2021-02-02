@@ -21,7 +21,7 @@ result["phi3"] = [sin(t[i]) ∓ 0.4*t[i]/10.0        for i in eachindex(t)]*u"ra
 plot(result, ["phi1", "phi2", "phi3"], figure=1,
      heading="Sine(time) with MonteCarloParticles/StaticParticles (plot area)")
      
-plot(result, ["phi1", "phi2", "phi3"], MonteCarloAsArea=false, figure=2,
+plot(result, ["phi1", "phi2", "phi3"], figure=2,
      heading="Sine(time) with MonteCarloParticles/StaticParticles (plot all runs)")
 
 println("\n... result info:")

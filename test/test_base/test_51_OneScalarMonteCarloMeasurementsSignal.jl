@@ -10,7 +10,7 @@ result = OrderedDict{String,Any}()
 result["time"] = t*u"s"
 result["phi"]  = [sin(t[i]) ± 0.1*c[i]  for i in eachindex(t)]*u"rad"
 
-plot(result, "phi", heading="Sine(time) with MonteCarloMeasurements")
+plot(result, "phi", MonteCarloAsArea=true, heading="Sine(time) with MonteCarloMeasurements")
 
 println("\n... result info:")
 printResultInfo(result)

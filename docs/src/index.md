@@ -1,7 +1,7 @@
-# ModiaPlot.jl Documentation
+# ModiaPlot Documentation
 
-Package ModiaPlot provides a convenient interface to produce
-line plots of time series data where a time series is identified by a String key.
+Package [ModiaPlot](https://github.com/ModiaSim/ModiaPlot.jl) provides a convenient interface 
+to produce line plots of time series data where a time series is identified by a String key.
 The legends/labels of the plots are automatically constructed by the
 keys and the units of the time series. Example:
 

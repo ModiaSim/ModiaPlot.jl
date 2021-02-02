@@ -255,7 +255,7 @@ addPlot(name::Symbol        , args...) = addPlot((string(name),), args...)
 
 function plot(result, names::AbstractMatrix; heading::AbstractString="", grid::Bool=true, xAxis="time", 
               figure::Int=1, prefix::AbstractString="", reuse::Bool=false, maxLegend::Integer=10, 
-              minXaxisTickLabels::Bool=false, MonteCarloAsArea=true)
+              minXaxisTickLabels::Bool=false, MonteCarloAsArea=false)
     if isnothing(result)
         @info "The call of ModiaPlot.plot(result, ...) is ignored, since the first argument is nothing."
         return
