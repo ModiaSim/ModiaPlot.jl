@@ -380,7 +380,8 @@ function printResultInfo(result)
         push!(resultInfoTable, [name, string(unit), isConstant, string(varSize), string(elType)] )
     end
 
-    show(stdout, resultInfoTable, summary=false, eltypes=false, rowlabel=Symbol("#"), allcols=true, truncate=50)
+    # eltypes=false, truncate=50: Requires and older version of DataFrames
+    show(stdout, resultInfoTable, summary=false, rowlabel=Symbol("#"), allcols=true)
     if nTime != -1
         println("\n... Number of time points = ", nTime)
     else
