@@ -31,6 +31,11 @@ julia> ]add ModiaPlot
 
 ## Release Notes
 
+### Version 0.7.1
+
+- Updated dependent packages to their newest versions and adapted the compat section in Project.toml.
+  Especially, GLMakie 0.2.4 is used (instead of 0.1.30).
+
 ### Version 0.7.0
 
 - Initial version, based on code developed for ModiaMath 0.6.x.
