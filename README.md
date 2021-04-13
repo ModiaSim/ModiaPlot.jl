@@ -3,7 +3,9 @@
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://modiasim.github.io/ModiaPlot.jl/stable/)
 [![The MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/ModiaSim/ModiaPlot.jl/blob/master/LICENSE.md)
 
-Package ModiaPlot provides a convenient interface to produce
+ModiaPlot is part of [ModiaSim](https://modiasim.github.io/docs/). 
+
+ModiaPlot provides a convenient interface to produce
 line plots of time series data where a time series is identified by a String key.
 The legends/labels of the plots are automatically constructed by the
 keys and the units of the time series. Example:
