@@ -127,15 +127,28 @@ function createLegend(diagram::Diagram, maxLegend::Int)::Nothing
     return nothing
 end
 
-    
-const abstol = 0.0001
-const reltol = 0.01
 
-sig_max(y_min, y_max) = max(y_max, y_min + max(abstol,abs(y_min)*reltol)) 
+const reltol = 0.001
+
+function sig_max(xsig, y_min, y_max)
+    dy = y_max - y_min
+    abstol = typemax(eltype(y_min))
+    for (i,v) in enumerate(dy)
+        if v > 0.0 && v < abstol
+            abstol = v
+        end
+    end    
+    @assert(abstol > 0.0)
+    y_max2 = similar(y_max)
+    for (i,value) = enumerate(y_max)
+        y_max2[i] = max(y_max[i], y_min[i] + max(abstol, abs(y_min[i])*reltol))
+    end
+    return y_max2
+end
+    
     
 function fill_between(axis, xsig, ysig_min, ysig_max, color)
-    FloatType = eltype(ysig_min)     
-    ysig_max2 = FloatType[sig_max(ysig_min[i], ysig_max[i]) for i = 1:length(ysig_max)]      
+    ysig_max2 = sig_max(xsig, ysig_min, ysig_max) 
     sig = GLMakie.Point2f0.(xsig,ysig_min)
     append!(sig, reverse(GLMakie.Point2f0.(xsig,ysig_max2)))
     push!(sig, sig[1])
@@ -153,8 +166,7 @@ function plotOneSignal(axis, xsig, ysig, color, MonteCarloAsArea)
 		# Plot area of uncertainty around mean value signal (use the same color, but transparent)
 		ysig_u   = Measurements.uncertainty.(ysig)
 		ysig_max = ysig_mean + ysig_u
-		ysig_min = ysig_mean - ysig_u
-        
+		ysig_min = ysig_mean - ysig_u        
 		fill_between(axis, xsig_mean, ysig_min, ysig_max, (color,0.2))
         
 	elseif typeof(ysig[1]) <: MonteCarloMeasurements.StaticParticles ||
