@@ -47,7 +47,7 @@ const path = dirname(dirname(@__FILE__))   # Absolute path of package directory
 const Version = "0.7.1"
 const Date = "2021-03-31"
 
-println("\nImporting ModiaPlot Version $Version ($Date) - this takes some time due to GLMakie import")
+println("Importing ModiaPlot Version $Version ($Date) - this takes some time due to GLMakie import")
 
 
 include("plot_base.jl")
