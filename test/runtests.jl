@@ -25,6 +25,9 @@ using Test
     include("test_51_OneScalarMonteCarloMeasurementsSignal.jl")
     include("test_52_MonteCarloMeasurementsWithDistributions.jl")
     
+    include("test_compare/test_01_OneScalarSignal.jl")
+    include("test_compare/test_02_OneScalarSignalWithUnit.jl")
+    
 end
 
 end

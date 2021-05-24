@@ -52,5 +52,6 @@ println("Importing ModiaPlot Version $Version ($Date) - this takes some time due
 
 include("plot_base.jl")
 include("plot_with_GLMakie.jl")
+include("CompareResults.jl")
 
 end
