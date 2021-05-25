@@ -86,7 +86,7 @@ end
 OneValueVector(value,nvalues) = OneValueVector{typeof(value)}(value,nvalues)
 
 Base.getindex(v::OneValueVector, i::Int)  = v.value
-Base.size(v::OneValueVector)              = (nvalues,)
+Base.size(v::OneValueVector)              = (v.nvalues,)
 Base.IndexStyle(::Type{<:OneValueVector}) = IndexLinear()
 
 
