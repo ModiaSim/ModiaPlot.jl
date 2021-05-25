@@ -30,51 +30,12 @@ function ifNecessaryStripUnits(s1,s2)
     end
     return (s1,s2)
 end
-        
-#=
-
-"""
-    dictionaryResult = DictionaryResult()
-    
-Generate a `DictionaryResult <: AbstractDict{String,Any}` object using
-the same constructor as for a `Dict`.
-"""
-mutable struct DictionaryResult <: AbstractDict{String,Any}
-    dict::OrderedDict{String,Any}
-    
-    DictionaryResult() = new(OrderedDict{String,Any}())
-    DictionaryResult(; kwargs...) = new(OrderedDict{String,Any}(; kwargs...))
-end
-
-# Overload AbstractDict methods
-Base.haskey(result::DictionaryResult, key) = Base.haskey(result.dict, key)
-
-Base.get(result::DictionaryResult, key, default)     = Base.get(result.dict, key, default)
-Base.get(f::Function, result::DictionaryResult, key) = Base.get(f, result.dict, key)
-
-Base.get!(result::DictionaryResult, key, default)     = Base.get!(result.dict, key, default)
-Base.get!(f::Function, result::DictionaryResult, key) = Base.get!(f, result.dict, key)
-
-Base.getkey(result::DictionaryResult, key, default) = Base.getkey(result.dict, key, default)
-
-Base.delete!(result::DictionaryResult, key) = Base.delete!(result.dict, key)
-
-Base.keys(result::DictionaryResult) = Base.keys(result.dict)
-
-Base.pop!(result::DictionaryResult, key)          = Base.pop!(result.dict, key)
-Base.pop!(result::DictionaryResult, key, default) = Base.pop!(result.dict, key, default)
-
-Base.setindex!(result::DictionaryResult, value, key...) = Base.setindex!(result.dict, value, key...)
-
-Base.values(result::DictionaryResult) = Base.values(result.dict)
-=#
 
 
 # Overload ModiaPlot methods
 ModiaPlot.hasSignal(   df::DataFrames.DataFrame, name) = name in DataFrames.names(df)
 ModiaPlot.getRawSignal(df::DataFrames.DataFrame, name) = (false, df[!,name])
 ModiaPlot.getNames(    df::DataFrames.DataFrame)       = DataFrames.names(df)
-
 
 
 # Provide Vector type with one value and fixed length
