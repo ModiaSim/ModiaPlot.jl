@@ -1,3 +1,9 @@
+> ⚠️ **INFO: This repository is deprecated**
+> 
+> Do no longer use this repository. Use instead [ModiaResult.jl](https://github.com/ModiaSim/ModiaResult.jl).
+> For more details, see [ModiaSim](https://modiasim.github.io/docs/). 
+
+
 # ModiaPlot
 
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://modiasim.github.io/ModiaPlot.jl/stable/)
